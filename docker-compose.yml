@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  palindrome-app:
+    build: .
+    container_name: palindrome-app
+    ports:
+      - "8000:8000"  # Expose port for the app
+    volumes:
+      - .:/app
+    command: ["pipenv", "run", "python", "app.py"]
